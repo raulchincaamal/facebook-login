@@ -46,7 +46,7 @@ const FacebookButton = ({ handleUserData, disabled }: IFacebookButtonProps) => {
         onClick={handleLogin}
         icon={<FacebookFilled />}
       >
-        Iniciar sesión con facebook
+        Login with Facebook
       </Button>
       <Script
         async
