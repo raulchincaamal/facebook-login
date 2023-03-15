@@ -12,7 +12,7 @@ const FacebookButton = ({ handleUserData, disabled }: IFacebookButtonProps) => {
   useEffect(() => {
     window.fbAsyncInit = function () {
       window.FB.init({
-        appId: "254336876916958",
+        appId: "757844632732700",
         cookie: true,
         xfbml: true,
         version: "v16.0",
