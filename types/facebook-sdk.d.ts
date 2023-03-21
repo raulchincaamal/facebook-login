@@ -7,13 +7,14 @@ declare global {
       init: (opts: IFacebookInit) => void
       getLoginStatus: (_: (response: unknown) => unknown) => void
       login: (
-        fn: (response: IFacebookLoginResponse) => void,
+        fn: (response: IFacebookAuthResponse) => void,
         opts: IFacebookLoginOptions
       ) => void
+      logout: (fn: (response) => void) => void
       api: (
-        route: string,
+        path: string,
         { fields: string },
-        fn: (response: IFacebookData) => unknown
+        callback: (response: IFacebookData) => unknown
       ) => void
       AppEvents: {
         logPageView: () => void
@@ -27,7 +28,7 @@ declare global {
     email: string
   }
 
-  interface IFacebookLoginResponse {
+  interface IFacebookAuthResponse {
     status: "connected" | "not_authorized" | "unknown"
     authResponse: {
       accessToken: string

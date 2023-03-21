@@ -28,6 +28,9 @@ const FacebookButton = ({ handleUserData, disabled }: IFacebookButtonProps) => {
         if (response.status === "connected") {
           window.FB.api("/me", { fields: "email, name" }, response => {
             handleUserData(response)
+            window.FB.logout(() => {
+              console.log("facebook logout");
+            })
           })
         }
       },
